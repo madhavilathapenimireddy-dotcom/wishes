@@ -1,0 +1,1029 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #080611;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   LOADING SCREEN
+========================================= */
+
+#loadingScreen {
+    position: fixed;
+    inset: 0;
+    background: #080611;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+.loader-heart {
+    font-size: 65px;
+    animation: heartbeat 1s infinite;
+}
+
+#loadingScreen p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #c9c2d8;
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    position: fixed;
+    inset: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #30204b 0%,
+            #120d20 40%,
+            #080611 100%
+        );
+}
+
+.section.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.08);
+    pointer-events: none;
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    opacity: 0.12;
+
+    z-index: 0;
+}
+
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    animation: floatUp linear infinite;
+
+    opacity: 0.4;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-duration: 15s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 40%;
+    animation-duration: 10s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 55%;
+    animation-duration: 18s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 70%;
+    animation-duration: 13s;
+}
+
+.floating-hearts span:nth-child(6) {
+    left: 82%;
+    animation-duration: 16s;
+}
+
+.floating-hearts span:nth-child(7) {
+    left: 92%;
+    animation-duration: 11s;
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 800px;
+}
+
+.small-text {
+    color: #cfc6dc;
+    font-size: 15px;
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.intro-content h1 {
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+}
+
+.intro-content h1 span {
+    color: #ff83b7;
+}
+
+.sub-text {
+    margin: 25px 0 35px;
+
+    color: #aaa2b8;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.main-button,
+.next-button {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f9a,
+            #9b5cff
+        );
+
+    box-shadow:
+        0 10px 40px rgba(255, 79, 154, 0.25);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+}
+
+.main-button:hover,
+.next-button:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 50px rgba(255, 79, 154, 0.45);
+}
+
+.next-button {
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.reveal-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 900px;
+}
+
+.bhanu-name {
+
+    font-size: clamp(60px, 13vw, 150px);
+
+    letter-spacing: 20px;
+
+    color: #ff80b5;
+
+    text-shadow:
+        0 0 20px rgba(255, 128, 181, 0.5),
+        0 0 60px rgba(255, 128, 181, 0.3);
+
+    animation: nameGlow 2s infinite alternate;
+}
+
+@keyframes nameGlow {
+
+    from {
+        text-shadow:
+            0 0 10px rgba(255, 128, 181, 0.3);
+    }
+
+    to {
+        text-shadow:
+            0 0 30px rgba(255, 128, 181, 0.8),
+            0 0 80px rgba(255, 128, 181, 0.4);
+    }
+}
+
+.sparkles {
+    font-size: 25px;
+
+    margin: 15px;
+}
+
+.reveal-message {
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: #f5d5e4;
+}
+
+
+/* =========================================
+   BIRTHDAY
+========================================= */
+
+#birthday {
+    background:
+        radial-gradient(
+            circle at center,
+            #4a2048,
+            #170c22 50%,
+            #080611
+        );
+}
+
+.birthday-content {
+    position: relative;
+    z-index: 5;
+}
+
+.cake {
+    font-size: 90px;
+
+    animation:
+        cakeFloat 2s infinite ease-in-out;
+}
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.birthday-title {
+
+    font-size: clamp(55px, 11vw, 120px);
+
+    line-height: 0.9;
+
+    font-weight: 700;
+
+    margin: 20px 0;
+}
+
+.birthday-title span {
+    color: #ff75b0;
+}
+
+.birthday-content h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 45px;
+
+    color: #ffd2e6;
+}
+
+.birthday-subtitle {
+    color: #bdb2c8;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+#confettiCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 100%);
+
+    padding: 30px 0;
+}
+
+.section-label {
+
+    color: #ff80b5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.message-container h1 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 60px;
+
+    margin-bottom: 25px;
+}
+
+.letter {
+
+    text-align: left;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(15px);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    line-height: 1.9;
+
+    color: #ddd5e3;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.letter strong {
+    color: #ff83b7;
+}
+
+.highlight {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: #ff9bc6;
+
+    text-align: center;
+}
+
+.signature {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    text-align: center;
+
+    color: #f4cddd;
+}
+
+
+/* =========================================
+   MEMORIES
+========================================= */
+
+.memory-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(950px, 100%);
+
+    padding: 30px 0;
+}
+
+.memory-container h1 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 65px;
+}
+
+.memory-intro {
+
+    max-width: 600px;
+
+    margin: 10px auto 30px;
+
+    color: #bdb4c6;
+}
+
+.photo-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo-card {
+
+    background: rgba(255,255,255,0.06);
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: transform 0.3s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.photo-placeholder {
+
+    aspect-ratio: 1;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #24162f,
+            #3a1d3c
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 45px;
+
+    color: #8d8096;
+}
+
+.photo-placeholder span {
+
+    font-size: 11px;
+
+    margin-top: 10px;
+}
+
+/* Photos inserted into the memory grid */
+.photo-grid .memory-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.photo-card p {
+
+    padding: 12px 5px 5px;
+
+    color: #cfc4d4;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   SPECIAL MEMORY
+========================================= */
+
+.special-memory {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 128, 181, 0.08),
+            rgba(155, 92, 255, 0.08)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.temple-icon {
+    font-size: 45px;
+}
+
+.special-memory h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 40px;
+
+    color: #ffb4d3;
+
+    margin: 10px;
+}
+
+.special-memory p {
+
+    color: #c8bfce;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: 10px auto;
+}
+
+.memory-highlight {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #ff9fc7 !important;
+
+    margin-top: 20px !important;
+}
+
+
+/* =========================================
+   KOTHI
+========================================= */
+
+.kothi-container {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.kothi-title {
+
+    font-size: clamp(55px, 12vw, 130px);
+
+    font-weight: 700;
+
+    color: #ff78b3;
+
+    transform: rotate(-3deg);
+
+    text-shadow:
+        5px 5px 0 #712a55;
+
+    animation: kothiShake 1s infinite alternate;
+}
+
+@keyframes kothiShake {
+
+    from {
+        transform: rotate(-3deg);
+    }
+
+    to {
+        transform: rotate(3deg);
+    }
+}
+
+.kothi-subtitle {
+
+    font-size: 45px;
+
+    margin: 20px;
+}
+
+.kothi-box {
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.kothi-box span {
+
+    display: block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 35px;
+
+    color: #ff9bc5;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   INTERESTS
+========================================= */
+
+.interest-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(950px, 100%);
+}
+
+.interest-container h1 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 65px;
+
+    margin-bottom: 35px;
+}
+
+.interest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.interest-card {
+
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: transform 0.3s;
+}
+
+.interest-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+}
+
+.interest-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.interest-card h2 {
+
+    color: #ff9dc7;
+
+    margin-bottom: 10px;
+}
+
+.interest-card p {
+
+    color: #aaa2b5;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(750px, 100%);
+}
+
+.final-stars {
+
+    font-size: 70px;
+
+    animation: heartbeat 2s infinite;
+}
+
+.final-container h1 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 65px;
+
+    margin: 15px 0 25px;
+}
+
+.final-message {
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    line-height: 1.8;
+
+    color: #cec5d5;
+}
+
+.final-message p {
+
+    margin-bottom: 20px;
+}
+
+.final-message h2 {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 40px;
+
+    color: #ff8fbe;
+}
+
+.big-line {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 28px;
+
+    color: #f1cadb;
+}
+
+.forever {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #ffabc9;
+}
+
+.final-heart {
+
+    font-size: 60px;
+
+    margin-top: 25px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.made-with {
+
+    color: #706679;
+
+    font-size: 11px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 25px 18px;
+        align-items: flex-start;
+        padding-top: 70px;
+    }
+
+    .intro-content h1 {
+        font-size: 48px;
+    }
+
+    .bhanu-name {
+
+        font-size: 60px;
+
+        letter-spacing: 8px;
+    }
+
+    .birthday-title {
+        font-size: 60px;
+    }
+
+    .birthday-content h2 {
+        font-size: 38px;
+    }
+
+    .message-container h1,
+    .memory-container h1,
+    .interest-container h1,
+    .final-container h1 {
+
+        font-size: 50px;
+    }
+
+    .letter {
+        padding: 25px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .photo-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .photo-card:last-child {
+
+        grid-column:
+            span 2;
+    }
+
+    .interest-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .kothi-title {
+        font-size: 65px;
+    }
+
+    .final-message {
+        padding: 25px;
+
+        font-size: 14px;
+    }
+}

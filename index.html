@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Bhanu ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================
+         LOADING SCREEN
+    ====================================== -->
+
+    <div id="loadingScreen">
+
+        <div class="loader-heart">❤️</div>
+
+        <p>Preparing something special...</p>
+
+    </div>
+
+
+    <!-- =====================================
+         BACKGROUND EFFECTS
+    ====================================== -->
+
+    <div class="stars"></div>
+
+    <div class="floating-hearts">
+        <span>❤️</span>
+        <span>💗</span>
+        <span>💕</span>
+        <span>✨</span>
+        <span>💖</span>
+        <span>🌸</span>
+        <span>❤️</span>
+    </div>
+
+
+    <!-- =====================================
+         SECTION 1 - INTRO
+    ====================================== -->
+
+    <section id="intro" class="section active">
+
+        <div class="intro-content">
+
+            <p class="small-text">
+                Hey Bhanu... 👀
+            </p>
+
+            <h1>
+                I made something<br>
+                <span>just for you.</span>
+            </h1>
+
+            <p class="sub-text">
+                Don't ask questions yet... 🤭
+            </p>
+
+            <button id="openBtn" class="main-button">
+                Open Your Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 2 - NAME REVEAL
+    ====================================== -->
+
+    <section id="nameReveal" class="section hidden">
+
+        <div class="reveal-content">
+
+            <p class="small-text">
+                There is someone who deserves a little extra happiness today...
+            </p>
+
+            <h1 class="bhanu-name">
+                B H A N U
+            </h1>
+
+            <div class="sparkles">
+                ✨ ✨ ✨
+            </div>
+
+            <p class="reveal-message">
+                Yes... you. 😌
+            </p>
+
+            <button class="next-button" onclick="showSection('birthday')">
+                Continue 💫
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 3 - BIRTHDAY
+    ====================================== -->
+
+    <section id="birthday" class="section hidden">
+
+        <canvas id="confettiCanvas"></canvas>
+
+        <div class="birthday-content">
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <p class="small-text">
+                Today is not just another day...
+            </p>
+
+            <h1 class="birthday-title">
+                HAPPY<br>
+                <span>BIRTHDAY</span>
+            </h1>
+
+            <h2>
+                BHANUUU! 🎉❤️
+            </h2>
+
+            <p class="birthday-subtitle">
+                May your smile stay this bright forever. ✨
+            </p>
+
+            <button class="next-button" onclick="showSection('message')">
+                I have something to tell you 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 4 - PERSONAL MESSAGE
+    ====================================== -->
+
+    <section id="message" class="section hidden">
+
+        <div class="message-container">
+
+            <p class="section-label">
+                A little message for you...
+            </p>
+
+            <h1>
+                Dear Bhanu ❤️
+            </h1>
+
+            <div class="letter">
+
+                <p>
+                    Happy birthday Bhanuu! 🥹❤️🎂
+                </p>
+
+                <p>
+                    It's honestly crazy to think that we've known each
+                    other for only five months, because somehow it feels
+                    like you've been a part of my life for much longer.
+                </p>
+
+                <p>
+                    You're not just a friend to me.
+                    You're my <strong>comfort person</strong>,
+                    one of the closest people to my heart,
+                    and someone I can genuinely be myself around. 🫶🏻
+                </p>
+
+                <p>
+                    I know you're an introvert and you have your own
+                    little world, but one of my favorite things is seeing
+                    the completely different version of you when you're
+                    with me. 😂❤️
+                </p>
+
+                <p>
+                    The random conversations, the laughs,
+                    the stupid moments, the silence that somehow
+                    doesn't feel awkward...
+                    all of it means more to me than you probably realize.
+                </p>
+
+                <p>
+                    And obviously...
+                    how can I forget our legendary
+                    <strong>"KOTHIIIIIII"</strong> moments? 😂😭
+                </p>
+
+                <p>
+                    From walking around Arunachalam temple
+                    to all those random little moments,
+                    I'm really glad I got to know you. 🌙✨
+                </p>
+
+                <p>
+                    Five months might sound like a short time,
+                    but some people don't need years to become special.
+                </p>
+
+                <p class="highlight">
+                    Some people just become home. ❤️
+                </p>
+
+                <p>
+                    And you're one of those people for me.
+                </p>
+
+                <p>
+                    So today, I just want you to know that
+                    I'm really grateful for you.
+                </p>
+
+                <p>
+                    Stay the same weird, introverted,
+                    anime-loving, music-loving,
+                    movie-loving KOTHIIII that you are. 😂❤️
+                </p>
+
+                <p class="signature">
+                    Happy Birthday once again, Bhanuu. 🥹🎂❤️
+                    <br>
+                    I'm really lucky to have you.
+                </p>
+
+            </div>
+
+            <button class="next-button" onclick="showSection('memories')">
+                Our little memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 5 - MEMORIES
+    ====================================== -->
+
+    <section id="memories" class="section hidden">
+
+        <div class="memory-container">
+
+            <p class="section-label">
+                Five months.
+            </p>
+
+            <h1>
+                A lot of memories. ❤️
+            </h1>
+
+            <p class="memory-intro">
+                Some moments don't look special when they're happening...
+                until you realize later how much they mean.
+            </p>
+
+
+            <!-- PHOTO PLACEHOLDERS -->
+
+            <div class="photo-grid">
+
+                    <div class="photo-card">
+                        <img src="images/bhanu1.jpg" alt="Bhanu photo 1" class="memory-photo">
+
+                        <p>
+                            One of those random moments...
+                        </p>
+                    </div>
+
+
+                    <div class="photo-card">
+                        <img src="images/bhanu2.jpg" alt="Bhanu photo 2" class="memory-photo">
+
+                        <p>
+                            A memory worth keeping. ❤️
+                        </p>
+                    </div>
+
+
+                    <div class="photo-card">
+                        <img src="images/bhanu3.jpg" alt="Bhanu photo 3" class="memory-photo">
+
+                        <p>
+                            And another one... ✨
+                        </p>
+                    </div>
+
+            </div>
+
+
+            <!-- ARUNACHALAM -->
+
+            <div class="special-memory">
+
+                <div class="temple-icon">
+                    🛕
+                </div>
+
+                <h2>
+                    Arunachalam 🌙
+                </h2>
+
+                <p>
+                    Walking around Arunachalam temple,
+                    talking about random things,
+                    laughing at absolutely nothing...
+                </p>
+
+                <p>
+                    It wasn't some huge extraordinary event.
+                    But somehow, it's one of those memories
+                    that stays.
+                </p>
+
+                <p class="memory-highlight">
+                    Maybe that's what makes a memory special.
+                    <br>
+                    It's not the place.
+                    <br>
+                    It's the person you're with. ❤️
+                </p>
+
+            </div>
+
+
+            <button class="next-button" onclick="showSection('kothi')">
+                One important thing 😂
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 6 - KOTHI
+    ====================================== -->
+
+    <section id="kothi" class="section hidden">
+
+        <div class="kothi-container">
+
+            <p class="small-text">
+                There is one word...
+            </p>
+
+            <h1 class="kothi-title">
+                KOTHIIIIIIIII
+            </h1>
+
+            <p class="kothi-subtitle">
+                😂😂😂
+            </p>
+
+            <div class="kothi-box">
+
+                <p>
+                    I don't think this word needs an explanation.
+                </p>
+
+                <p>
+                    If you know, you know. 😭
+                </p>
+
+                <span>
+                    K O T H I ❤️
+                </span>
+
+            </div>
+
+            <button class="next-button" onclick="showSection('interests')">
+                Your world 🎧
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 7 - HIS INTERESTS
+    ====================================== -->
+
+    <section id="interests" class="section hidden">
+
+        <div class="interest-container">
+
+            <p class="section-label">
+                Things that make you... you.
+            </p>
+
+            <h1>
+                Your little universe 🌌
+            </h1>
+
+            <div class="interest-grid">
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🌸
+                    </div>
+
+                    <h2>
+                        Anime
+                    </h2>
+
+                    <p>
+                        Your escape into worlds
+                        where anything is possible.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🎧
+                    </div>
+
+                    <h2>
+                        Music
+                    </h2>
+
+                    <p>
+                        The songs that somehow
+                        understand feelings better than words.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-icon">
+                        🎬
+                    </div>
+
+                    <h2>
+                        Movies
+                    </h2>
+
+                    <p>
+                        Stories, characters,
+                        emotions and all the chaos in between.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button class="next-button" onclick="showSection('final')">
+                One last surprise... 👀
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 8 - FINAL
+    ====================================== -->
+
+    <section id="final" class="section hidden">
+
+        <div class="final-container">
+
+            <div class="final-stars">
+                ✨
+            </div>
+
+            <p class="small-text">
+                Before you leave...
+            </p>
+
+            <h1>
+                One last thing, Bhanu.
+            </h1>
+
+            <div class="final-message">
+
+                <p>
+                    I don't know what the future has planned,
+                    but I'm really happy that these five months
+                    brought you into my life.
+                </p>
+
+                <p>
+                    I hope you always have reasons to smile,
+                    people who understand you,
+                    and moments that make life feel beautiful.
+                </p>
+
+                <p class="big-line">
+                    And whenever life gets a little heavy...
+                </p>
+
+                <p>
+                    remember that there is someone here
+                    who will always be happy to listen to your
+                    random thoughts, your problems,
+                    your stories and your KOTHIIII moments. 😂❤️
+                </p>
+
+                <h2>
+                    Happy Birthday, Bhanuu! 🎂❤️
+                </h2>
+
+                <p class="forever">
+                    Stay happy. Stay weird.
+                    <br>
+                    And never change. 🫶🏻
+                </p>
+
+            </div>
+
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <p class="made-with">
+                Made with a lot of love, memories
+                & a little bit of craziness. ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MUSIC
+    ====================================== -->
+
+    <audio id="birthdayMusic" loop>
+
+        <source src="music/birthday-song.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
